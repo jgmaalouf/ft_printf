@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_format_1.c                                      :+:      :+:    :+:   */
+/*   ft_format_1.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaalouf <jmaalouf@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 15:05:32 by jmaalouf          #+#    #+#             */
-/*   Updated: 2022/06/11 14:23:42 by jmaalouf         ###   ########.fr       */
+/*   Updated: 2022/06/11 14:23:08 by jmaalouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	arg_with_width(t_format *f, int arg_with_precision, int flags)
 	return (arg_with_precision + flags);
 }
 
-static int	hash_flag(va_list ap_copy, t_format *f, char **flag)
+int	hash_flag(va_list ap_copy, t_format *f, char **flag)
 {
 	if (va_arg(ap_copy, unsigned int) == 0)
 		return (0);
