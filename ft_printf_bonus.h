@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaalouf <jmaalouf@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 08:03:33 by jmaalouf          #+#    #+#             */
-/*   Updated: 2022/06/11 14:04:14 by jmaalouf         ###   ########.fr       */
+/*   Updated: 2022/06/11 14:05:46 by jmaalouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef FT_PRINTF_BONUS_H
+# define FT_PRINTF_BONUS_H
 
 # include "libft/libft.h"
 # include <stdarg.h>
@@ -45,8 +45,8 @@ int		ft_strlen_printf(const char *s, t_format *f);
 void	ft_puthex_upper(unsigned long n, t_format *f, int arg_prec);
 void	ft_puthex(unsigned long n, t_format *f, int arg_prec);
 int		extra_flags(va_list ap, t_format *f, char **flag);
-int		arg_with_width(t_format *f, int arg_with_precision, int flags);
-int		arg_with_prec(va_list ap, t_format *f, int arg);
 int		arg_size(va_list ap, t_format *f);
+int		arg_with_prec(va_list ap, t_format *f, int arg);
+int		arg_with_width(t_format *f, int arg_with_precision, int flags);
 
 #endif

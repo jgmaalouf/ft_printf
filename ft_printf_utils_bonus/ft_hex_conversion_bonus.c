@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hex_conversion.c                                :+:      :+:    :+:   */
+/*   ft_hex_conversion_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaalouf <jmaalouf@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 17:06:04 by jmaalouf          #+#    #+#             */
-/*   Updated: 2022/06/09 10:21:41 by jmaalouf         ###   ########.fr       */
+/*   Updated: 2022/06/11 14:00:59 by jmaalouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf_bonus.h"
 
 static char	hex_num(int n)
 {
@@ -37,7 +37,7 @@ char	*ret(char *str, unsigned int i)
 	ret = malloc(sizeof(char) * i + 1);
 	if (ret != NULL)
 		ft_strlcpy(ret, str + i + 1, 100 - i);
-	return(ret);
+	return (ret);
 }
 
 char	*hex_conversion(unsigned long n, t_format *f)
@@ -47,9 +47,9 @@ char	*hex_conversion(unsigned long n, t_format *f)
 
 	i = 98;
 	if (n == 0 && (f->specifier == 'x' || f->specifier == 'X'))
-		return(ft_strdup("0"));
+		return (ft_strdup("0"));
 	if (n == 0 && (f->specifier == 'p'))
-		return(ft_strdup("0x0"));
+		return (ft_strdup("0x0"));
 	while (n != 0)
 	{
 		str[i] = hex_num((int)(n % 16));
@@ -62,5 +62,5 @@ char	*hex_conversion(unsigned long n, t_format *f)
 		str[i--] = '0';
 	}
 	str[99] = '\0';
-	return(ret(str, i));
+	return (ret(str, i));
 }

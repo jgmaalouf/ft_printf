@@ -6,17 +6,18 @@
 /*   By: jmaalouf <jmaalouf@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 14:39:25 by jmaalouf          #+#    #+#             */
-/*   Updated: 2022/06/07 09:18:56 by jmaalouf         ###   ########.fr       */
+/*   Updated: 2022/06/11 13:53:03 by jmaalouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 static void	check_specifier(const char *str, unsigned int *ip, t_format *f)
 {
-	while ((ft_strchr("-0.# +", str[*ip]) != NULL && str[*ip] != '\0') || ft_isdigit(str[*ip]))
+	while ((ft_strchr("-0.# +", str[*ip]) != NULL
+			&& str[*ip] != '\0') || ft_isdigit(str[*ip]))
 		(*ip)++;
-	if(ft_strchr("cspdiuxX%", str[*ip]) != NULL && str[*ip] != '\0')
+	if (ft_strchr("cspdiuxX%", str[*ip]) != NULL && str[*ip] != '\0')
 	{
 		f->specifier = str[*ip];
 		return ;
@@ -75,6 +76,6 @@ void	check_format(const char *str, unsigned int *ip, t_format *f)
 		f->flag_zero = 0;
 	if (f->flag_plus != 0 && f->flag_space != 0)
 		f->flag_space = 0;
-	if(f->field_length < 0)
+	if (f->field_length < 0)
 		f->field_length = 0;
 }
